@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>ArtGIS</title>
+	<script type="text/javascript" src="OL-2.12/OpenLayers.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script>
+      function init() {
+        
+        var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+        var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+        
+        var extent = new OpenLayers.Bounds(-74.64,4.246,-73.522,4.972).transform(fromProjection,toProjection);
+                                          //[left, bottom, right, top]
+
+
+        var position       = new OpenLayers.LonLat(-74.083333,4.6).transform( fromProjection, toProjection);
+        var zoom           = 11; 
+        
+        var options ={
+          restrictedExtent : extent,
+          controls : [
+           new OpenLayers.Control.Navigation(),   /*noverse con el raton*/
+           new OpenLayers.Control.PanZoomBar(),   
+           new OpenLayers.Control.Attribution()
+          ]
+        };
+
+        map = new OpenLayers.Map("basicMap", options);
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+
+        //--Markers
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+        markers.addMarker(new OpenLayers.Marker(position));
+        
+        map.setCenter(position, zoom );
+      }
+    </script>
+  </head>
+  <body onload="init();">
+    <div id="basicMap"></div>
+  </body>
+</html>
