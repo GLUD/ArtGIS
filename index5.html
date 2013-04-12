@@ -4,8 +4,11 @@
 <head>
 	<title>ArtGIS</title>
 	<script type="text/javascript" src="OL-2.12/OpenLayers.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css" />
 
     <script>
       function init() {
@@ -40,13 +43,23 @@
         
         map.setCenter(position, zoom );
       }
+       $(function() {
+		$( "#pestanas" ).tabs();
+		});
     </script>
   </head>
   
   <body onload="init();">
   
   	<img src="img/bannerbeta.png" width="100%" />
+  	
+  	<div id="pestanas">
+  	 <ul>
+		<li><a href="#basicMap">Mapa Callejero</a></li>
+		<li><a href="#basicMap">Entrar</a></li>
+	</ul>
+  	</div>
   
-    <div id="basicMap"></div>
+ 	<div id="basicMap"></div>
   </body>
 </html>
