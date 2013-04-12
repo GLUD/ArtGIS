@@ -7,4 +7,6 @@ Proyecto Conjunto del grupo GNU/Linux de la Universidad Distrital Francisco Jose
 
 Aplicacion web optimizada para moviles que busca referencias el arte callejereo en Bogota.
 
+El conocimiento te hace libre, libera el conocimiento.
+
 GLUD 2013
