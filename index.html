@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>ArtGIS</title>
+        <meta name="description" content="Aplicacion web optimizada para móviles que busca referencias el arte callejereo en Bogota" />
+        <meta name="author" content="GNU/Linux Group" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+        <link rel="shortcut icon" href="css/images/favicon.ico" />
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dijit/themes/claro/claro.css"/>
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dijit/themes/claro/document.css"/>
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/resources/dojo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+        <!-- Javascripts -->
+        <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true, parseOnLoad: true"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/geo1.js"></script>
+    </head>
+
+<body class="claro">
+    <div id="bc" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false" style="width:100%; height:100%;padding:0;">
+        <!-- Header Section-->
+        <div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="width:100%; height:auto;padding:0;">
+            <div id="banner">					
+            </div> 
+        </div>
+        <!--End Header-->   
+        <!-- Main Content Section (map, toolbars, left panel)-->
+        <div id="mainWindow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" 
+        style="width:100%;height:100%;padding:0;">
+	        <div data-dojo-type="dijit.layout.BorderContainer" style="padding:0;">
+	            <!-- Map Section -->
+	            <div id="mapContainer" dojotype="dijit.layout.ContentPane" data-dojo-props="region:'center'" style="padding:0;display:block">
+		            <div id="map" style="height:100%; width: 100%; padding:0;">
+		            	<!-- Toolbar (Search Basemap Measure)--> 
+						<div id="toolbarContainer" style="width: 100px; height: 70px; left: 70px; padding: 0;">
+							<div id="toolbar" data-dojo-type="dijit.Toolbar">
+								<div id="ubicar" title="Ubicar" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'ubicarIcon', showLabel: false, onClick:function(){getMyLocation();}" type="button">
+								</div>
+								<!-- Botones de muestra
+								<div id="navegacion" title="Navegación" style="margin-right: 10px;" data-dojo-type="dijit.form.DropDownButton" data-dojo-props="iconClass:'navigationIcon'">
+									<div data-dojo-id="navtoolbar" data-dojo-type="dijit.Toolbar" data-dojo-props="region: 'left'" style="width: 260px; background-color: #eeeeee">  
+										<div title="Acercar" data-dojo-type="dijit.form.Button" data-dojo-id="zoomin"  data-dojo-props="iconClass:'zoominIcon', showLabel: false, onClick:function(){}"></div>
+										<div title="Alejar" data-dojo-type="dijit.form.Button" data-dojo-id="zoomout" data-dojo-props="iconClass:'zoomoutIcon', showLabel: false, onClick:function(){}"></div>
+									</div>
+								</div>                        
+								<div class="dijitInline" style="margin-right: 10px;">
+									<div id="search"></div>
+								</div>-->
+							</div>
+						</div>
+						<!--End Toolbar-->
+						<!-- -->
+						<div id="switcher" style="display: none; width: 100px; height: 1em; left: 10px; bottom: 40px; padding: 0; position: absolute; z-index: 999;">
+							<div id="cambiarVista" title="Ir al módulo de vistas" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'ubicarIcon', showLabel: false, onClick:function(){changeVisibility();}" type="button">
+							</div>
+						</div>
+						<!---->
+		            </div>
+	            </div>
+	            <!--end Map section-->     
+	            <!-- Right Pane Section-->
+	            <div id="rightPane" dojotype="dijit.layout.ContentPane" data-dojo-props="region:'right'" style="width:300px; padding:0;">
+				  <div dojoType="dijit.layout.AccordionContainer">
+					<div dojoType="dijit.layout.ContentPane" title="Cuenta de Usuario" selected="true">
+					</div>
+					<div dojoType="dijit.layout.ContentPane" title="Busquedas y Filtros">
+					</div>
+					<div dojoType="dijit.layout.ContentPane" title="Detalles del Arte">
+					</div>
+					<div dojoType="dijit.layout.ContentPane" title="Agregar Nuevo punto">
+					</div>
+					<div dojoType="dijit.layout.ContentPane" title="Acerda de">
+					</div>
+				  </div>
+	            </div>
+	            <!--end Right Pane section-->           
+	        </div>
+	    </div>    
+    </div>
+</body>
+</html>

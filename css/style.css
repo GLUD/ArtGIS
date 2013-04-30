@@ -1,0 +1,49 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+#map{
+	background-color: #b5d0d0; 
+}
+.ubicarIcon,modulosIcon{
+    background-size:38px 38px;
+    width: 38px;
+    height: 38px;
+}
+.ubicarIcon{
+    background-image:url(images/ubicar.png);
+}
+.modulosIcon{
+    background-image:url(images/imprimir.png);
+}
+.logo{
+	width: 240px;
+	height: 50px;
+	right: 10px !important;
+	bottom: 10px !important;
+    background-image:url(images/logo.png);
+}
+#header{
+	background-size: 100% 100%;
+	background-image:url(images/bg_banner.png);
+	background-repeat:repeat;
+}
+#banner{
+    padding: 0;
+    width: 100%;
+    height: 90px;
+    background-image:url(images/banner.png);
+    background-repeat:no-repeat;
+    background-position:left top;
+}
+#toolbarContainer{
+	position: absolute;
+}
+#toolbar,#toolbarContainer{
+	z-index: 999;
+	background-color: transparent !important;
+	border: none;
+}
+.dijitGutter{
+	display: none;
+}
