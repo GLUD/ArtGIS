@@ -70,7 +70,7 @@ function isMobile()
 function resizeElements(){
 	if(isMobile())
 	{
-		dojo.byId("header").style.display = "none"; 	
+		/*dojo.byId("header").style.display = "none"; */	
 		dojo.byId("rightPane").style.display = "none";
 		dojo.byId("map").style.width="100%";
 		dojo.byId("switcher").style.display = "block";
